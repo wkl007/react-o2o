@@ -1,3 +1,10 @@
+# react-o2o
+
+> react 16+react-router 4+redux 仿大众点评
+
+## Build Setup
+
+``` bash
 # install dependencies
 npm install
 
@@ -9,3 +16,5 @@ npm start
 
 # build for production with minification
 npm run build
+
+```
