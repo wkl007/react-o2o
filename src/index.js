@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './router/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './assets/less/reset.less'
+import './assets/less/font.less'
+
+ReactDOM.render(
+  <App/>
+  , document.getElementById('root'));
 registerServiceWorker();
