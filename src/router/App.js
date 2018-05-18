@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
+import HomeServer from '../api/home'
 
 class App extends Component {
 
   componentDidMount() {
-    /* HomeServer.getAdData().then(res => {
-       console.log(res);
+     HomeServer.getAdData().then(res => {
+      /* console.log(res);*/
      }).catch(err => {
        console.log(err);
-     })*/
+     })
   }
 
   render() {

@@ -4,7 +4,7 @@ export default class OrderListServer {
 
   static getOrderListData(username) {
     let url = `/orderList/${username}`;
-    return request(url)
+    return request(url,{method:'GET'})
   }
 
   static sendComment(id, comment) {
