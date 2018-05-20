@@ -1,16 +1,39 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import HomeHeader from '../../components/homeHeader/homeHeader'
+import CateGory from '../../components/cateGory/cateGory'
+import Ad from './subpage/ad'
+
 
 class Home extends Component {
-  constructor(props, context) {
-    super(props, context);
-
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
-      <div className='home'>home</div>
+      <div className='home'>
+        <HomeHeader cityName={this.props.userInfo.cityName}/>
+        <CateGory/>
+        <div style={{height: '15px'}}/>
+        <Ad/>
+      </div>
     )
   }
 }
 
-export default Home
+//redux react 绑定
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {}
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home)

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 class NotFound extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
   }
 

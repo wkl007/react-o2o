@@ -6,8 +6,8 @@ import {CITY_NAME} from "../../util/localStoreKey";
 import * as userInfoActionFromOtherFile from '../../redux/actions/userInfo'
 
 class Index extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       initDone: false
     }
