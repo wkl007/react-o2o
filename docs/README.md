@@ -94,3 +94,29 @@ if (cityName == null) {
 ###14.js中trim()方法去掉首尾空格
 
 
+###15.react事件绑定不再需要bind(es6)
+
+     class Test entends React.Component {
+            constructor () {
+                super();
+                this.state = {};
+            };
+            // 带参数的事件绑定
+            handleClick = (params) => {
+                console.log(params);
+            };
+            // 不带参数的事件绑定
+            click =（）=> {
+                console.log('可以直接拿到this:'+this);
+            }
+            render () {
+                return {
+                    <div>
+                        <div onClick={ e => {this.handleClick(params)} }>绑定</div>
+                        <div onClick={ this.click }>绑定</div>
+                    </div>
+                };
+            };
+        }
+
+

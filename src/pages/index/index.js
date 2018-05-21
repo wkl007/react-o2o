@@ -20,7 +20,6 @@ class Index extends Component {
   //城市初始化
   init() {
     let cityName = LocalStore.getItem(CITY_NAME);
-
     if (!cityName) {
       cityName = '北京'
     }

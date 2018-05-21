@@ -11,7 +11,6 @@ import Detail from '../pages/detail/detail'
 import NotFound from '../pages/notFound/notFound'
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
@@ -19,7 +18,7 @@ class App extends Component {
           <Switch>
             <Redirect path="/" to={{pathname: '/home'}} exact/>
             <Route path='/home' component={Home}/>
-            <Route path='city' component={City}/>
+            <Route path='/city' component={City}/>
             <Route path='/login/:router?' component={Login}/>
             <Route path='/user' component={User}/>
             <Route path='/search/:category/:keyword?' component={Search}/>
