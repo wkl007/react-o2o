@@ -16,12 +16,12 @@ export function request (url, options) {
     options.body = JSON.stringify(options.body)
     options.headers = {
       'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json; charset=utf-8',
     }
     /* options.body = qs.stringify(options.body);
        options.headers={
        'Accept': 'application/json, text/plain, *!/!*',
-       'Content-Type': 'application/x-www-form-urlencoded'
+       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
        }
      */
   }
