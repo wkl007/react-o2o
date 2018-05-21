@@ -16,7 +16,6 @@ class City extends Component {
 
   changeCity = (newCity) => {
     if (!newCity) return;
-
     if (window.confirm(`您选择的城市是:${newCity}`)) {
       //修改redux
       let userInfo = this.props.userInfo;
