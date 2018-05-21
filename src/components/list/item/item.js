@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import './style.less'
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
-    let data = this.props.data;
+  render () {
+    let data = this.props.data
     return (
       <div className='list-item clear'>
         <Link to={`/detail/${data.id}`}>
@@ -35,4 +35,4 @@ class Item extends Component {
   }
 }
 
-export default Item;
+export default Item

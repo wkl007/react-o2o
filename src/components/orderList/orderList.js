@@ -1,19 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import Item from './item/item'
 
 class OrderList extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
   }
 
-  render() {
-    let data = this.props.data;
+  render () {
+    let data = this.props.data
     return (
       <div className='order-list'>
         {
           data.map((item, index) => {
-            return <Item key={index} data={item} submitComment={this.props.submitComment}/>
+            return <Item key={index} data={item}
+                         submitComment={this.props.submitComment}/>
           })
         }
       </div>
@@ -21,5 +22,4 @@ class OrderList extends Component {
   }
 }
 
-
-export default OrderList;
+export default OrderList

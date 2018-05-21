@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Route, Switch, Redirect, withRouter} from 'react-router-dom';
+import React, { Component } from 'react'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 
 import Index from '../pages/index/index'
 import Home from '../pages/home/home'
@@ -11,7 +11,7 @@ import Detail from '../pages/detail/detail'
 import NotFound from '../pages/notFound/notFound'
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className="App">
         <Index>
@@ -27,8 +27,8 @@ class App extends Component {
           </Switch>
         </Index>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(App);
+export default withRouter(App)

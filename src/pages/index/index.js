@@ -1,40 +1,40 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import LocalStore from '../../util/localStore'
-import {CITY_NAME} from "../../util/localStoreKey";
+import { CITY_NAME } from '../../util/localStoreKey'
 import * as userInfoActionFromOtherFile from '../../redux/actions/userInfo'
 
 class Index extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      initDone: false
+      initDone: false,
     }
   }
 
-  componentDidMount() {
-    this.init();
+  componentDidMount () {
+    this.init()
   }
 
   //城市初始化
-  init() {
-    let cityName = LocalStore.getItem(CITY_NAME);
+  init () {
+    let cityName = LocalStore.getItem(CITY_NAME)
     if (!cityName) {
       cityName = '北京'
     }
 
     //将城市信息存储到Redux中
     this.props.userInfoActions.update({
-      cityName: cityName
-    });
+      cityName: cityName,
+    })
 
     this.setState({
-      initDone: true
+      initDone: true,
     })
   }
 
-  render() {
+  render () {
     return (
       <div className='index'>
         {
@@ -48,19 +48,19 @@ class Index extends Component {
 }
 
 //redux react绑定
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {}
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {
     userInfoActions: bindActionCreators(
-      userInfoActionFromOtherFile, dispatch
-    )
+      userInfoActionFromOtherFile, dispatch,
+    ),
   }
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Index)

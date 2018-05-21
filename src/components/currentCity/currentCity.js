@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 import './style.less'
 
 class CurrentCitry extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div className='current-city'>
         <h2>{this.props.cityName}</h2>

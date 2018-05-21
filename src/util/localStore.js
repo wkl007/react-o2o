@@ -22,5 +22,5 @@ export default {
         console.error('localStorage.setItem报错, ', ex.message)
       }
     }
-  }
+  },
 }

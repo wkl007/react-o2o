@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import LocalStore from '../../util/localStore'
-import {CITY_NAME} from "../../util/localStoreKey";
+import { CITY_NAME } from '../../util/localStoreKey'
 import * as userInfoActionFromOtherFile from '../../redux/actions/userInfo'
 
 import Header from '../../components/header/header'
@@ -10,26 +10,25 @@ import CurrentCity from '../../components/currentCity/currentCity'
 import CityList from '../../components/cityList/cityList'
 
 class City extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
   changeCity = (newCity) => {
-    if (!newCity) return;
+    if (!newCity) return
     if (window.confirm(`您选择的城市是:${newCity}`)) {
       //修改redux
-      let userInfo = this.props.userInfo;
-      userInfo.cityName = newCity;
-      this.props.userInfoActions.update(userInfo);
+      let userInfo = this.props.userInfo
+      userInfo.cityName = newCity
+      this.props.userInfoActions.update(userInfo)
 
       //修改本地存储
-      LocalStore.setItem(CITY_NAME, newCity);
-
-      this.props.history.goBack();
+      LocalStore.setItem(CITY_NAME, newCity)
+      this.props.history.goBack()
     }
   }
 
-  render() {
+  render () {
     return (
       <div className='city'>
         <Header title='选择城市'/>
@@ -41,20 +40,19 @@ class City extends Component {
 }
 
 //redux react绑定
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {
     userInfoActions: bindActionCreators(
-      userInfoActionFromOtherFile, dispatch
-    )
+      userInfoActionFromOtherFile, dispatch,
+    ),
   }
 }
-
 
 export default connect(
   mapStateToProps,

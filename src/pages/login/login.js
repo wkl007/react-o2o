@@ -1,47 +1,46 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import * as userInfoActionFromOtherFile from '../../redux/actions/userInfo'
 
 import Header from '../../components/header/header'
 import LoginComponent from '../../components/login/login'
 
-
 class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      checking: true
+      checking: true,
     }
   }
 
-  componentDidMount() {
-    this.doCheck();
+  componentDidMount () {
+    this.doCheck()
   }
 
   doCheck = () => {
-    let userInfo = this.props.userInfo;
+    let userInfo = this.props.userInfo
     if (userInfo.username) {
       this.goUserPage()
     } else {
       this.setState({
-        checking: false
+        checking: false,
       })
     }
   }
 
   loginHandle = (username) => {
-    let actions = this.props.userInfoActions;
-    let userInfo = this.props.userInfo;
-    userInfo.username = username;
-    actions.update(userInfo);
-    let params = this.props.match.params;
-    let router = params.router;
+    let actions = this.props.userInfoActions
+    let userInfo = this.props.userInfo
+    userInfo.username = username
+    actions.update(userInfo)
+    let params = this.props.match.params
+    let router = params.router
     if (router) {
       this.props.history.push(router)
     } else {
-      this.goUserPage();
+      this.goUserPage()
     }
   }
 
@@ -49,36 +48,36 @@ class Login extends Component {
     this.props.history.push('/user')
   }
 
-  render() {
+  render () {
     return (
-   <div className='login'>
-     <Header title='登录'/>
-     {
-       this.state.checking
-       ? <div style={{textAlign:'center'}}>loading...</div>
-         : <LoginComponent loginHandle={this.loginHandle}/>
-     }
-   </div>
+      <div className='login'>
+        <Header title='登录'/>
+        {
+          this.state.checking
+            ? <div style={{textAlign: 'center'}}>loading...</div>
+            : <LoginComponent loginHandle={this.loginHandle}/>
+        }
+      </div>
     )
   }
 }
 
 //redux react绑定
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {
     userInfoActions: bindActionCreators(
-      userInfoActionFromOtherFile, dispatch
-    )
+      userInfoActionFromOtherFile, dispatch,
+    ),
   }
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Login)

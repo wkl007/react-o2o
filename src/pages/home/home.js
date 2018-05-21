@@ -1,17 +1,16 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import HomeHeader from '../../components/homeHeader/homeHeader'
 import CateGory from '../../components/cateGory/cateGory'
 import Ad from './subpage/ad'
 import List from './subpage/list'
 
-
 class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div className='home'>
         <HomeHeader cityName={this.props.userInfo.cityName}/>
@@ -25,13 +24,13 @@ class Home extends Component {
 }
 
 //redux react 绑定
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {}
 }
 

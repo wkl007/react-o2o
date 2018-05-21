@@ -1,26 +1,26 @@
-import React, {Component} from 'react';
-import ReactSwipe from 'react-swipe';
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import ReactSwipe from 'react-swipe'
+import { Link } from 'react-router-dom'
 
 import './style.less'
 
 class CateGory extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      index: 0
+      index: 0,
     }
   }
 
-  render() {
+  render () {
     let option = {
       auto: 3000,
-      callback: (index)=> {
+      callback: (index) => {
         this.setState({
-          index: index
+          index: index,
         })
-      }
-    };
+      },
+    }
     let data1 = [
       {
         id: 1,
@@ -28,7 +28,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jingdian.png)`,
         },
         text: '景点',
-        url: '/search/jingdian'
+        url: '/search/jingdian',
       },
       {
         id: 2,
@@ -36,14 +36,14 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/ktv.png)`,
         },
         text: 'KTV',
-        url: '/search/ktv'
+        url: '/search/ktv',
       }, {
         id: 3,
         style: {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/gouwu.png)`,
         },
         text: '购物',
-        url: '/search/gouwu'
+        url: '/search/gouwu',
       },
       {
         id: 4,
@@ -51,7 +51,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/shenghuofuwu.png)`,
         },
         text: '生活服务',
-        url: '/search/shenghuofuwu'
+        url: '/search/shenghuofuwu',
       },
       {
         id: 5,
@@ -59,7 +59,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jianshenyundong.png)`,
         },
         text: '健身运动',
-        url: '/search/jianshenyundong'
+        url: '/search/jianshenyundong',
       },
       {
         id: 6,
@@ -67,7 +67,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/meifa.png)`,
         },
         text: '美发',
-        url: '/search/meifa'
+        url: '/search/meifa',
       },
       {
         id: 7,
@@ -75,7 +75,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/qinzi.png)`,
         },
         text: '亲子',
-        url: '/search/qinzi'
+        url: '/search/qinzi',
       },
       {
         id: 8,
@@ -83,7 +83,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/xiaochikuaican.png)`,
         },
         text: '小吃快餐',
-        url: '/search/xiaochikuaican'
+        url: '/search/xiaochikuaican',
       },
       {
         id: 9,
@@ -91,7 +91,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/zizhucan.png)`,
         },
         text: '自助餐',
-        url: '/search/zizhucan'
+        url: '/search/zizhucan',
       },
       {
         id: 10,
@@ -99,9 +99,9 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jiuba.png)`,
         },
         text: '酒吧',
-        url: '/search/jiuba'
+        url: '/search/jiuba',
       },
-    ];
+    ]
     let data2 = [
       {
         id: 1,
@@ -109,7 +109,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/meishi.png)`,
         },
         text: '美食',
-        url: '/search/meishi'
+        url: '/search/meishi',
       },
       {
         id: 2,
@@ -117,14 +117,14 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/dianying.png)`,
         },
         text: '电影',
-        url: '/search/dianying'
+        url: '/search/dianying',
       }, {
         id: 3,
         style: {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jiudian.png)`,
         },
         text: '酒店',
-        url: '/search/jiudian'
+        url: '/search/jiudian',
       },
       {
         id: 4,
@@ -132,7 +132,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/xuixianyule.png)`,
         },
         text: '休闲娱乐',
-        url: '/search/xuixianyule'
+        url: '/search/xuixianyule',
       },
       {
         id: 5,
@@ -140,7 +140,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/waimai.png)`,
         },
         text: '外卖',
-        url: '/search/waimai'
+        url: '/search/waimai',
       },
       {
         id: 6,
@@ -148,7 +148,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/huoguo.png)`,
         },
         text: '火锅',
-        url: '/search/huoguo'
+        url: '/search/huoguo',
       },
       {
         id: 7,
@@ -156,7 +156,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/liren.png)`,
         },
         text: '丽人',
-        url: '/search/liren'
+        url: '/search/liren',
       },
       {
         id: 8,
@@ -164,7 +164,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/dujiachuxing.png)`,
         },
         text: '度假出行',
-        url: '/search/dujiachuxing'
+        url: '/search/dujiachuxing',
       },
       {
         id: 9,
@@ -172,7 +172,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/zuliaoanmo.png)`,
         },
         text: '足疗按摩',
-        url: '/search/zuliaoanmo'
+        url: '/search/zuliaoanmo',
       },
       {
         id: 10,
@@ -180,9 +180,9 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/zhoubianyou.png)`,
         },
         text: '周边游',
-        url: '/search/zhoubianyou'
+        url: '/search/zhoubianyou',
       },
-    ];
+    ]
     let data3 = [
       {
         id: 1,
@@ -190,7 +190,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/ribencai.png)`,
         },
         text: '日本菜',
-        url: '/search/ribencai'
+        url: '/search/ribencai',
       },
       {
         id: 2,
@@ -198,14 +198,14 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/SPA.png)`,
         },
         text: 'SPA',
-        url: '/search/spa'
+        url: '/search/spa',
       }, {
         id: 3,
         style: {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jiehun.png)`,
         },
         text: '结婚',
-        url: '/search/jiehun'
+        url: '/search/jiehun',
       },
       {
         id: 4,
@@ -213,7 +213,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/xuexipeixun.png)`,
         },
         text: '学习培训',
-        url: '/search/xuexipeixun'
+        url: '/search/xuexipeixun',
       },
       {
         id: 5,
@@ -221,7 +221,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/xican.png)`,
         },
         text: '西餐',
-        url: '/search/xican'
+        url: '/search/xican',
       },
       {
         id: 6,
@@ -229,7 +229,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/huochejipiao.png)`,
         },
         text: '火车机票',
-        url: '/search/huochejipiao'
+        url: '/search/huochejipiao',
       },
       {
         id: 7,
@@ -237,7 +237,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/shaokao.png)`,
         },
         text: '烧烤',
-        url: '/search/shaokao'
+        url: '/search/shaokao',
       },
       {
         id: 8,
@@ -245,7 +245,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/jiazhuang.png)`,
         },
         text: '家装',
-        url: '/search/jiazhuang'
+        url: '/search/jiazhuang',
       },
       {
         id: 9,
@@ -253,7 +253,7 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/chongwu.png)`,
         },
         text: '宠物',
-        url: '/search/chongwu'
+        url: '/search/chongwu',
       },
       {
         id: 10,
@@ -261,9 +261,9 @@ class CateGory extends Component {
           backgroundImage: `url(https://react-o2o-1256738511.cos.ap-beijing.myqcloud.com/quanbufenlei.png)`,
         },
         text: '全部分类',
-        url: '/search/quanbufenlei'
+        url: '/search/quanbufenlei',
       },
-    ];
+    ]
 
     return (
       <div className='home-category'>
@@ -273,7 +273,8 @@ class CateGory extends Component {
               {
                 data1.map((item) => {
                   return <Link to={item.url} key={item.id}>
-                    <li className='float-left' style={item.style}>{item.text}</li>
+                    <li className='float-left'
+                        style={item.style}>{item.text}</li>
                   </Link>
                 })
               }
@@ -284,7 +285,8 @@ class CateGory extends Component {
               {
                 data2.map((item) => {
                   return <Link to={item.url} key={item.id}>
-                    <li className='float-left' style={item.style}>{item.text}</li>
+                    <li className='float-left'
+                        style={item.style}>{item.text}</li>
                   </Link>
                 })
               }
@@ -295,7 +297,8 @@ class CateGory extends Component {
               {
                 data3.map((item) => {
                   return <Link to={item.url} key={item.id}>
-                    <li className='float-left' style={item.style}>{item.text}</li>
+                    <li className='float-left'
+                        style={item.style}>{item.text}</li>
                   </Link>
                 })
               }
@@ -314,4 +317,4 @@ class CateGory extends Component {
   }
 }
 
-export default CateGory;
+export default CateGory

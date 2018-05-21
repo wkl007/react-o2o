@@ -1,27 +1,27 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import './style.less'
 
 class LoadMore extends Component {
-  constructor(props) {
-    super(props);
-    this.wrapper = React.createRef();
-    this.loadMoreHandle = this.loadMoreHandle.bind(this);
+  constructor (props) {
+    super(props)
+    this.wrapper = React.createRef()
+    this.loadMoreHandle = this.loadMoreHandle.bind(this)
   }
 
-  componentDidMount() {
-    this.init();
+  componentDidMount () {
+    this.init()
   }
 
   //使用滚动式自动加载更多
-  init() {
-    let loadMoreFn = this.props.loadMoreFn;
-    let wrapper = this.wrapper.current;
-    let timeoutId;
+  init () {
+    let loadMoreFn = this.props.loadMoreFn
+    let wrapper = this.wrapper.current
+    let timeoutId
 
-    function callback() {
-      let top = wrapper.getBoundingClientRect().top;
-      let windowHeight = window.screen.height;
+    function callback () {
+      let top = wrapper.getBoundingClientRect().top
+      let windowHeight = window.screen.height
       if (top && top < windowHeight) {
         //证明wrapper已经被滚动到暴露在页面可视范围之内了
         loadMoreFn()
@@ -29,18 +29,18 @@ class LoadMore extends Component {
     }
 
     window.addEventListener('scroll', function () {
-      if (this.props.isLoadingMore) return;
-      if (timeoutId) clearTimeout(timeoutId);
+      if (this.props.isLoadingMore) return
+      if (timeoutId) clearTimeout(timeoutId)
       timeoutId = setTimeout(callback, 50)
     }.bind(this), false)
   }
 
   //传输过来的函数
-  loadMoreHandle() {
-    this.props.loadMoreFn();
+  loadMoreHandle () {
+    this.props.loadMoreFn()
   }
 
-  render() {
+  render () {
     return (
       <div className='load-more' ref={this.wrapper}>
         {
@@ -53,4 +53,4 @@ class LoadMore extends Component {
   }
 }
 
-export default LoadMore;
+export default LoadMore

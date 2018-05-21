@@ -1,32 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import HomeAd from '../../../components/homeAd/homeAd'
 import HomeServer from '../../../api/home'
 
 class Ad extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      data: []
+      data: [],
     }
   }
 
-  componentDidMount() {
-    this.initData();
+  componentDidMount () {
+    this.initData()
   }
 
   initData = () => {
     HomeServer.getAdData().then(res => {
       if (res.length) {
         this.setState({
-          data: res
+          data: res,
         })
       }
     }).catch(err => {
       console.log(err)
     })
-  };
+  }
 
-  render() {
+  render () {
     return (
       <div className='ad'>
         {
@@ -39,4 +39,4 @@ class Ad extends Component {
   }
 }
 
-export default Ad;
+export default Ad

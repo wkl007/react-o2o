@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import './style.less'
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      username: ''
+      username: '',
     }
   }
 
@@ -17,17 +17,18 @@ class Login extends Component {
   }
 
   clickHandle = () => {
-    let username = this.state.username;
-    let loginHandle = this.props.loginHandle;
+    let username = this.state.username
+    let loginHandle = this.props.loginHandle
     loginHandle(username)
   }
 
-  render() {
+  render () {
     return (
       <div className='login-container'>
         <div className="input-container phone-container">
           <i className="icon-tablet"/>
-          <input type="text" placeholder='输入手机号' value={this.state.username} onChange={this.changeHandle}/>
+          <input type="text" placeholder='输入手机号' value={this.state.username}
+                 onChange={this.changeHandle}/>
         </div>
         <div className="input-container password-container">
           <i className="icon-key"/>
@@ -40,4 +41,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Login

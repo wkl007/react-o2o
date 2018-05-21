@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import SearchInput from '../searchInput/searchInput'
@@ -7,15 +7,15 @@ import SearchInput from '../searchInput/searchInput'
 import './style.less'
 
 class HomeHeader extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
   enterHandle = (value) => {
     this.props.history.push(`/search/all/${value}`)
-  };
+  }
 
-  render() {
+  render () {
     return (
       <div className='clear home-header'>
         <div className="home-header-left float-left">
@@ -44,6 +44,6 @@ class HomeHeader extends Component {
 
 HomeHeader.propTypes = {
   cityName: PropTypes.string,
-};
+}
 
 export default withRouter(HomeHeader)

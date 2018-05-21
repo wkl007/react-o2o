@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import './style.less'
 
 class UserInfo extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div className='userInfo-container'>
         <p>
@@ -25,4 +25,4 @@ class UserInfo extends Component {
   }
 }
 
-export default UserInfo;
+export default UserInfo

@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
   }
 
-  render() {
+  render () {
     return (
       <h1>search</h1>
     )

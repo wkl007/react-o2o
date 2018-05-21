@@ -1,25 +1,23 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import Header from '../../components/header/header'
 import UserInfo from '../../components/userInfo/userInfo'
 import OrderList from './subpage/orderList'
 
-
 class User extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor (props) {
+    super(props)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (!this.props.userInfo.username) {
       this.props.history.push('/login')
     }
   }
 
-  render() {
-    let userInfo = this.props.userInfo;
+  render () {
+    let userInfo = this.props.userInfo
     return (
       <div className='user'>
         <Header title='用户主页' backRouter='/home'/>
@@ -31,13 +29,13 @@ class User extends Component {
 }
 
 //redux react绑定
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {}
 }
 

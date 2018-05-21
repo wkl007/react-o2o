@@ -1,35 +1,35 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 import './style.less'
 
 class SearchInput extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      value: ''
+      value: '',
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({
-      value: this.props.value || ''
+      value: this.props.value || '',
     })
   }
 
   //监控变化
   changeHandle = (e) => {
     this.setState({
-      value: e.target.value
+      value: e.target.value,
     })
-  };
+  }
 
   //检控enter事件
   keyUpHandle = (e) => {
-    if (e.keyCode !== 13) return;
-    this.props.enterHandle(e.target.value);
-  };
+    if (e.keyCode !== 13) return
+    this.props.enterHandle(e.target.value)
+  }
 
-  render() {
+  render () {
     return (
       <input
         type="text"
@@ -43,4 +43,4 @@ class SearchInput extends Component {
   }
 }
 
-export default SearchInput;
+export default SearchInput

@@ -1,51 +1,51 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 import './style.less'
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       commentState: 2,//0-未评价 1-评价中 2-已评价
     }
-    this.commentText = React.createRef();
+    this.commentText = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({
-      commentState: this.props.data.commentState
+      commentState: this.props.data.commentState,
     })
   }
 
   showComment = () => {
     this.setState({
-      commentState: 1
+      commentState: 1,
     })
   }
 
   commentOk = () => {
     this.setState({
-      commentState: 2
+      commentState: 2,
     })
   }
 
   hideComment = () => {
     this.setState({
-      commentState: 0
+      commentState: 0,
     })
   }
 
   submitComment = () => {
-    let submitComment = this.props.submitComment;
-    let id = this.props.data.id;
-    let commentText = this.commentText.current;
-    let value = commentText.value.trim();
-    if (!value) return;
-    submitComment(id, value, this.commentOk);
+    let submitComment = this.props.submitComment
+    let id = this.props.data.id
+    let commentText = this.commentText.current
+    let value = commentText.value.trim()
+    if (!value) return
+    submitComment(id, value, this.commentOk)
   }
 
-  render() {
-    let data = this.props.data;
+  render () {
+    let data = this.props.data
     return (
       <div className='order-item-container'>
         <div className='clear'>
@@ -71,11 +71,14 @@ class Item extends Component {
           this.state.commentState === 1
             ? <div className='comment-text-container'>
                 <textarea
-                  style={{width: '100%', height: '80px', resize: 'none'}} className="comment-text"
+                  style={{width: '100%', height: '80px', resize: 'none'}}
+                  className="comment-text"
                   ref={this.commentText}/>
               <button className="btn" onClick={this.submitComment}>提交</button>
               &nbsp;
-              <button className="btn unselected-btn" onClick={this.hideComment}>取消</button>
+              <button className="btn unselected-btn"
+                      onClick={this.hideComment}>取消
+              </button>
             </div>
             : ''
         }
@@ -84,4 +87,4 @@ class Item extends Component {
   }
 }
 
-export default Item;
+export default Item

@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './style.less'
 
 class HomeAd extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div className='home-ad'>
         <h2>超值特惠</h2>
@@ -30,6 +30,6 @@ class HomeAd extends Component {
 
 HomeAd.propTypes = {
   data: PropTypes.array,
-};
+}
 
-export default HomeAd;
+export default HomeAd

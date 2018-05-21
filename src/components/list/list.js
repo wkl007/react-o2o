@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import Item from './item/item'
 
 import './style.less'
 
 class ListComponent extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
-  render() {
+  render () {
     return (
       <div className='list-container'>
         {
@@ -21,4 +21,4 @@ class ListComponent extends Component {
   }
 }
 
-export default ListComponent;
+export default ListComponent

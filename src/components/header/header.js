@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 import './style.less'
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
   clickHandle = () => {
-    let backRouter = this.props.backRouter;
+    let backRouter = this.props.backRouter
     if (backRouter) {
       this.props.history.push(backRouter)
     } else {
-      this.props.history.goBack();
+      this.props.history.goBack()
     }
   }
 
-  render() {
+  render () {
     return (
       <div className='common-header'>
         <span className='back-icon' onClick={this.clickHandle}>
@@ -29,4 +29,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default withRouter(Header)
