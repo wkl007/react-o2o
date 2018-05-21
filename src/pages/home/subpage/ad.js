@@ -14,7 +14,7 @@ class Ad extends Component {
     this.initData();
   }
 
-  initData() {
+  initData = () => {
     HomeServer.getAdData().then(res => {
       if (res.length) {
         this.setState({
@@ -24,7 +24,7 @@ class Ad extends Component {
     }).catch(err => {
       console.log(err)
     })
-  }
+  };
 
   render() {
     return (

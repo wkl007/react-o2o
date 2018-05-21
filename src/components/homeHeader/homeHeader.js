@@ -11,9 +11,9 @@ class HomeHeader extends Component {
     super(props);
   }
 
-  enterHandle(value) {
+  enterHandle = (value) => {
     this.props.history.push(`/search/all/${value}`)
-  }
+  };
 
   render() {
     return (
@@ -34,7 +34,7 @@ class HomeHeader extends Component {
           <div className="search-container">
             <i className="icon-search"/>
             &nbsp;
-            <SearchInput value='' enterHandle={this.enterHandle.bind(this)}/>
+            <SearchInput value='' enterHandle={this.enterHandle}/>
           </div>
         </div>
       </div>

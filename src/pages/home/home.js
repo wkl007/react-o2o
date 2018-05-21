@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import HomeHeader from '../../components/homeHeader/homeHeader'
 import CateGory from '../../components/cateGory/cateGory'
 import Ad from './subpage/ad'
+import List from './subpage/list'
 
 
 class Home extends Component {
@@ -17,6 +18,7 @@ class Home extends Component {
         <CateGory/>
         <div style={{height: '15px'}}/>
         <Ad/>
+        <List cityName={this.props.userInfo.cityName}/>
       </div>
     )
   }

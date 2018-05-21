@@ -17,17 +17,17 @@ class SearchInput extends Component {
   }
 
   //监控变化
-  changeHandle(e) {
+  changeHandle = (e) => {
     this.setState({
       value: e.target.value
     })
-  }
+  };
 
   //检控enter事件
-  keyUpHandle(e) {
+  keyUpHandle = (e) => {
     if (e.keyCode !== 13) return;
     this.props.enterHandle(e.target.value);
-  }
+  };
 
   render() {
     return (
@@ -35,8 +35,8 @@ class SearchInput extends Component {
         type="text"
         className='search-input'
         placeholder='请输入关键词'
-        onChange={this.changeHandle.bind(this)}
-        onKeyUp={this.keyUpHandle.bind(this)}
+        onChange={this.changeHandle}
+        onKeyUp={this.keyUpHandle}
         value={this.state.value}
       />
     )
