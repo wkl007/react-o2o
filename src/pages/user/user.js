@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import Header from '../../components/header/header'
+import UserInfo from '../../components/userInfo/userInfo'
+import OrderList from './subpage/orderList'
+
 
 class User extends Component {
   constructor(props) {
@@ -6,11 +12,36 @@ class User extends Component {
 
   }
 
+  componentDidMount() {
+    if (!this.props.userInfo.username) {
+      this.props.history.push('/login')
+    }
+  }
+
   render() {
+    let userInfo = this.props.userInfo;
     return (
-      <h1>user</h1>
+      <div className='user'>
+        <Header title='用户主页' backRouter='/home'/>
+        <UserInfo username={userInfo.username} city={userInfo.cityName}/>
+        <OrderList username={userInfo.username}/>
+      </div>
     )
   }
 }
 
-export default User
+//redux react绑定
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {}
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(User)

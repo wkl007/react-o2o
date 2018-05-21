@@ -1,5 +1,7 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const KoaBody = require('koa-body');
+KoaBody({multipart: true});
 
 const app = new Koa();
 const router = new Router();
@@ -81,15 +83,21 @@ router.get('/api/orderList/:username', function (ctx) {
 
 //提交评论
 router.post('/api/submitComment', function (ctx) {
-  ctx.body = {
-    errno: 0,
-    msg: 'ok'
+  let data = ctx.request.body;
+  if (data.id && data.comment) {
+    console.log(data.id, data.comment);
+    ctx.body = {
+      errno: 0,
+      msg: 'ok'
+    }
   }
 });
 
 app
+  .use(KoaBody())
   .use(router.routes())
   .use(router.allowedMethods());
+
 app.listen(8080, () => {
   console.error(`服务器启动成功：localhost:${8080}`)
 });

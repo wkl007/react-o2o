@@ -36,7 +36,6 @@ class Login extends Component {
     let userInfo = this.props.userInfo;
     userInfo.username = username;
     actions.update(userInfo);
-    console.log(userInfo);return
     let params = this.props.match.params;
     let router = params.router;
     if (router) {

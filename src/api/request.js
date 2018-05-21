@@ -1,13 +1,30 @@
 import 'whatwg-fetch'
 import 'es6-promise'
 
+//let qs = require('qs');
+
 const BASE_URL = '/api';
 
 export function request(url, options) {
   options.credentials = 'include';
   options.headers = {
-    'Accept': 'application/json, text/plain, */*'
+    'Accept': 'application/json, text/plain, */*',
   };
+
+  if (options.method === 'POST') {
+    //根据后端接受什么形式的数据选择对应的body与headers
+    options.body = JSON.stringify(options.body);
+    options.headers = {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    }
+    /* options.body = qs.stringify(options.body);
+       options.headers={
+       'Accept': 'application/json, text/plain, *!/!*',
+       'Content-Type': 'application/x-www-form-urlencoded'
+       }
+     */
+  }
 
   url = `${BASE_URL}${url}`;
 
@@ -16,16 +33,6 @@ export function request(url, options) {
       return res.json();
     }).then(data => {
       resolve(data)
-      /*if (data.code === 0) {
-        resolve(data)
-      } else {
-        if (data.code === 401) {
-          //失败后的一种状态
-        } else {
-          //失败的另一种状态
-        }
-        reject(data) //返回失败数据
-      }*/
     }).catch(err => {
       //捕获异常
       console.log(err.msg);
