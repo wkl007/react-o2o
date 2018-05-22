@@ -6,15 +6,19 @@
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # mock serve with hot reload at localhost:8080
-npm run mock
+yarn mock
 
 # serve with hot reload at localhost:3000
-npm start
+yarn start
 
 # build for production with minification
-npm run build
+yarn build
 
 ```
+
+## 真机预览
+
+![react-o2o](https://github.com/wkl007/react-o2o/blob/master/docs/preview.png)
