@@ -21,6 +21,4 @@ yarn build
 
 ## 真机预览
 
-<center>
-<img src="https://github.com/wkl007/react-o2o/blob/master/docs/preview.png" width="50%"/>
-</center>
+![react-o2o](https://github.com/wkl007/react-o2o/blob/master/docs/preview.png)
