@@ -9,7 +9,11 @@ class Header extends Component {
     if (backRouter) {
       this.props.history.push(backRouter)
     } else {
-      this.props.history.goBack()
+      if (this.props.history.length <= 2) {
+        this.props.history.push('/home')
+      } else {
+        this.props.history.goBack()
+      }
     }
   }
 
