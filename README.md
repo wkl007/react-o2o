@@ -2,7 +2,7 @@
 
 > react 16+react-router 4+redux 仿大众点评
 
-## Build Setup
+## 安装运行
 
 ``` bash
 # install dependencies
@@ -21,4 +21,6 @@ yarn build
 
 ## 真机预览
 
-![react-o2o](https://github.com/wkl007/react-o2o/blob/master/docs/preview.png)
+<center>
+<img src="https://github.com/wkl007/react-o2o/blob/master/docs/preview.png" width="50%"/>
+</center>
