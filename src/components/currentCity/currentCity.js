@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class CurrentCitry extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className='current-city'>

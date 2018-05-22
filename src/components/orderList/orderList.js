@@ -3,11 +3,6 @@ import Item from './item/item'
 import PropTypes from 'prop-types'
 
 class OrderList extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   render () {
     let data = this.props.data
     return (

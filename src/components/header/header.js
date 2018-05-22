@@ -4,10 +4,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class Header extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   clickHandle = () => {
     let backRouter = this.props.backRouter
     if (backRouter) {

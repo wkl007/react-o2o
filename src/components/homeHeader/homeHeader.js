@@ -5,10 +5,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class HomeHeader extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   enterHandle = (value) => {
     this.props.history.push(`/search/all/${value}`)
   }

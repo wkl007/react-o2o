@@ -10,10 +10,6 @@ import CurrentCity from '../../components/currentCity/currentCity'
 import CityList from '../../components/cityList/cityList'
 
 class City extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   changeCity = (newCity) => {
     if (!newCity) return
     if (window.confirm(`您选择的城市是:${newCity}`)) {

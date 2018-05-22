@@ -4,11 +4,6 @@ import SearchHeader from '../../components/searchHeader/searchHeader'
 import SearchList from './subpage/list'
 
 class Search extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   render () {
     let params = this.props.match.params
     return (

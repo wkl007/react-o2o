@@ -4,11 +4,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class DetailInfo extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   render () {
     let data = this.props.data
     return (

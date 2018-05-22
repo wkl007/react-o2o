@@ -13,6 +13,8 @@ export default function userInfo (state = initialState, action) {
       return state.filter(item => {
         if (item.id !== action.data.id) {
           return item
+        } else {
+          return '未找到id'
         }
       })
     default:

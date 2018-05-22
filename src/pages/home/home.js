@@ -6,10 +6,6 @@ import Ad from './subpage/ad'
 import List from './subpage/list'
 
 class Home extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className='home'>

@@ -5,10 +5,6 @@ import UserInfo from '../../components/userInfo/userInfo'
 import OrderList from './subpage/orderList'
 
 class User extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   componentDidMount () {
     if (!this.props.userInfo.username) {
       this.props.history.push('/login')

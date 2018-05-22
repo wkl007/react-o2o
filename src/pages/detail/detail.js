@@ -5,11 +5,6 @@ import Buy from './subpage/buy'
 import Comment from './subpage/comment'
 
 class Detail extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   render () {
     let id = this.props.match.params.id
     return (

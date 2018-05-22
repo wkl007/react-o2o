@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class CityList extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   clickHandle = (cityName) => {
     let changeFn = this.props.changeFn
     changeFn(cityName)

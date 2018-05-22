@@ -3,11 +3,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class Star extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   render () {
     let star = this.props.star || 0
     if (star > 5) {

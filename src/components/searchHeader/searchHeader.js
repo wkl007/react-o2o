@@ -5,11 +5,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class SearchHeader extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   enterHandle = (value) => {
     this.props.history.push(
       `/search/${this.props.match.params.category}/${value}`)

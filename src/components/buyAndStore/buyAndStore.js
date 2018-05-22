@@ -3,11 +3,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class BuyAndStore extends Component {
-  constructor (props) {
-    super(props)
-
-  }
-
   buyClickHandle = () => {
     let buyHandle = this.props.buyHandle
     buyHandle()

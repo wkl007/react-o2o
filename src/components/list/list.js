@@ -4,10 +4,6 @@ import PropTypes from 'prop-types'
 import './style.less'
 
 class ListComponent extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className='list-container'>
