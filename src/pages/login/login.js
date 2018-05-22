@@ -39,14 +39,14 @@ class Login extends Component {
     let router = params.router
     let id = params.id
     if (router && id) {
-      this.props.history.push(`/${router}/${id}`)
+      this.props.history.replace(`/${router}/${id}`)
     } else {
       this.goUserPage()
     }
   }
 
   goUserPage = () => {
-    this.props.history.push('/user')
+    this.props.history.replace('/user')
   }
 
   render () {
