@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class Header extends Component {
@@ -27,6 +27,11 @@ class Header extends Component {
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  backRouter: PropTypes.string,
+  title: PropTypes.string,
 }
 
 export default withRouter(Header)

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import OrderListServer from '../../../api/orderList'
-
 import OrderListComponent from '../../../components/orderList/orderList'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class OrderList extends Component {
@@ -51,6 +50,10 @@ class OrderList extends Component {
       </div>
     )
   }
+}
+
+OrderList.propTypes = {
+  username: PropTypes.string,
 }
 
 export default OrderList

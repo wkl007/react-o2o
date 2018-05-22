@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import ListComponent from '../../../components/list/list'
 import LoadMore from '../../../components/loadMore/loadMore'
-
 import SearchServer from '../../../api/search'
+import PropTypes from 'prop-types'
 
 // 初始化一个组件的 state
 const initialState = {
@@ -88,6 +87,10 @@ class List extends Component {
       </div>
     )
   }
+}
+
+List.propTypes = {
+  keyword: PropTypes.string,
 }
 
 //redux react绑定

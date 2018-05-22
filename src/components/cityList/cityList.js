@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class CityList extends Component {
@@ -74,6 +74,10 @@ class CityList extends Component {
       </div>
     )
   }
+}
+
+CityList.propTypes = {
+  changeFn: PropTypes.func,
 }
 
 export default CityList

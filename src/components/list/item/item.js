@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class Item extends Component {
@@ -33,6 +33,10 @@ class Item extends Component {
       </div>
     )
   }
+}
+
+Item.propTypes = {
+  data: PropTypes.object,
 }
 
 export default Item

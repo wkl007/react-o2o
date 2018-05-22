@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import SearchInput from '../searchInput/searchInput'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class SearchHeader extends Component {
@@ -35,7 +34,10 @@ class SearchHeader extends Component {
       </div>
     )
   }
+}
 
+SearchHeader.propTypes = {
+  keyword: PropTypes.string,
 }
 
 export default withRouter(SearchHeader)

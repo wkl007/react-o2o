@@ -3,16 +3,18 @@ import Item from './item/item'
 import PropTypes from 'prop-types'
 import './style.less'
 
-class ListComponent extends Component {
+class CommentList extends Component {
   constructor (props) {
     super(props)
+
   }
 
   render () {
+    let data = this.props.data
     return (
-      <div className='list-container'>
+      <div className="comment-list">
         {
-          this.props.data.map((item, index) => {
+          data.map((item, index) => {
             return <Item key={index} data={item}/>
           })
         }
@@ -21,8 +23,8 @@ class ListComponent extends Component {
   }
 }
 
-ListComponent.propTypes = {
+CommentList.propTypes = {
   data: PropTypes.array,
 }
 
-export default ListComponent
+export default CommentList

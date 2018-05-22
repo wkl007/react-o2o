@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class UserInfo extends Component {
@@ -23,6 +23,11 @@ class UserInfo extends Component {
       </div>
     )
   }
+}
+
+UserInfo.propTypes = {
+  username: PropTypes.string,
+  city: PropTypes.string,
 }
 
 export default UserInfo

@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import HomeServer from '../../../api/home'
-import ListComponent from '../../../components/list/list'
+import DetailServer from '../../../api/detail'
+import ListComment from '../../../components/commentList/commentList'
 import LoadMore from '../../../components/loadMore/loadMore'
 import PropTypes from 'prop-types'
 import './style.less'
 
-class List extends Component {
+class Comment extends Component {
   constructor (props) {
     super(props)
-    this.state = {
+    let initialState = {
       data: [],
       hasMore: false,
       isLoadingMore: false,
       page: 1,
     }
+    this.state = initialState
   }
 
   componentDidMount () {
@@ -21,11 +22,11 @@ class List extends Component {
   }
 
   loadFirstPageData = () => {
-    let cityName = this.props.cityName
-    HomeServer.getListData(cityName, 0).then(res => {
+    let id = this.props.id
+    DetailServer.getCommentData(0, id).then(res => {
       this.setState({
-        hasMore: res.hasMore,
         data: this.state.data.concat(res.data),
+        hasMore: res.hasMore,
       })
     }).catch(err => {
       console.log(err)
@@ -36,12 +37,12 @@ class List extends Component {
     this.setState({
       isLoadingMore: true,
     })
-    let cityName = this.props.cityName
+    let id = this.props.id
     let page = this.state.page
-    HomeServer.getListData(cityName, page).then(res => {
+    DetailServer.getCommentData(page, id).then(res => {
       this.setState({
-        hasMore: res.hasMore,
         data: this.state.data.concat(res.data),
+        hasMore: res.hasMore,
         page: page + 1,
         isLoadingMore: false,
       })
@@ -52,11 +53,11 @@ class List extends Component {
 
   render () {
     return (
-      <div className='list'>
-        <h2 className='home-list-title'>猜你喜欢</h2>
+      <div className='detail-comment-subpage'>
+        <h2>用户评论</h2>
         {
           this.state.data.length
-            ? <ListComponent data={this.state.data}/>
+            ? <ListComment data={this.state.data}/>
             : <div style={{textAlign: 'center'}}>加载中...</div>
         }
         {
@@ -69,9 +70,8 @@ class List extends Component {
     )
   }
 }
-
-List.propTypes = {
-  cityName: PropTypes.string,
+Comment.propTypes = {
+  id: PropTypes.string,
 }
 
-export default List
+export default Comment

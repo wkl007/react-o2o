@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class CurrentCitry extends Component {
@@ -14,6 +14,10 @@ class CurrentCitry extends Component {
       </div>
     )
   }
+}
+
+CurrentCitry.propTypes = {
+  cityName: PropTypes.string,
 }
 
 export default CurrentCitry

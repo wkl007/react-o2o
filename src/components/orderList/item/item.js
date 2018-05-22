@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class Item extends Component {
@@ -85,6 +85,11 @@ class Item extends Component {
       </div>
     )
   }
+}
+
+Item.propTypes = {
+  data: PropTypes.object,
+  submitComment: PropTypes.func,
 }
 
 export default Item

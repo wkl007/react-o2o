@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class Login extends Component {
@@ -39,6 +39,10 @@ class Login extends Component {
       </div>
     )
   }
+}
+
+Login.propTypes = {
+  loginHandle: PropTypes.func,
 }
 
 export default Login

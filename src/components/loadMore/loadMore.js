@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class LoadMore extends Component {
@@ -51,6 +51,11 @@ class LoadMore extends Component {
       </div>
     )
   }
+}
+
+LoadMore.propTypes = {
+  loadMoreFn: PropTypes.func,
+  isLoadingMore: PropTypes.bool,
 }
 
 export default LoadMore

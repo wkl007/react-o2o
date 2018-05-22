@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Item from './item/item'
+import PropTypes from 'prop-types'
 
 class OrderList extends Component {
   constructor (props) {
@@ -20,6 +21,10 @@ class OrderList extends Component {
       </div>
     )
   }
+}
+
+OrderList.propTypes = {
+  data: PropTypes.array,
 }
 
 export default OrderList

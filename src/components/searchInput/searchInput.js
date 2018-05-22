@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import './style.less'
 
 class SearchInput extends Component {
@@ -43,4 +43,8 @@ class SearchInput extends Component {
   }
 }
 
+SearchInput.propTypes = {
+  value: PropTypes.string,
+  enterHandle: PropTypes.func,
+}
 export default SearchInput

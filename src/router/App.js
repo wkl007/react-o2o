@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
-
 import Index from '../pages/index/index'
 import Home from '../pages/home/home'
 import City from '../pages/city/city'
@@ -19,7 +18,7 @@ class App extends Component {
             <Redirect path="/" to={{pathname: '/home'}} exact/>
             <Route path='/home' component={Home}/>
             <Route path='/city' component={City}/>
-            <Route path='/login/:router?' component={Login}/>
+            <Route path='/login/:router?/:id?' component={Login}/>
             <Route path='/user' component={User}/>
             <Route path='/search/:category/:keyword?' component={Search}/>
             <Route path='/detail/:id' component={Detail}/>

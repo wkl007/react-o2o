@@ -37,8 +37,9 @@ class Login extends Component {
     actions.update(userInfo)
     let params = this.props.match.params
     let router = params.router
-    if (router) {
-      this.props.history.push(router)
+    let id = params.id
+    if (router && id) {
+      this.props.history.push(`/${router}/${id}`)
     } else {
       this.goUserPage()
     }
