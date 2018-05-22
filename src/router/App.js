@@ -9,6 +9,33 @@ import Search from '../pages/search/search'
 import Detail from '../pages/detail/detail'
 import NotFound from '../pages/notFound/notFound'
 
+const routes = [
+  {
+    path: '/home',
+    component: Home,
+  },
+  {
+    path: '/city',
+    component: City,
+  },
+  {
+    path: '/login/:router?/:id?',
+    component: Login,
+  },
+  {
+    path: '/user',
+    component: User,
+  },
+  {
+    path: '/search/:category/:keyword?',
+    component: Search,
+  },
+  {
+    path: '/detail/:id',
+    component: Detail,
+  },
+]
+
 class App extends Component {
   render () {
     return (
@@ -16,12 +43,12 @@ class App extends Component {
         <Index>
           <Switch>
             <Redirect path="/" to={{pathname: '/home'}} exact/>
-            <Route path='/home' component={Home}/>
-            <Route path='/city' component={City}/>
-            <Route path='/login/:router?/:id?' component={Login}/>
-            <Route path='/user' component={User}/>
-            <Route path='/search/:category/:keyword?' component={Search}/>
-            <Route path='/detail/:id' component={Detail}/>
+            {
+              routes.map((item, index) => {
+                return <Route key={index} path={item.path}
+                              component={item.component}/>
+              })
+            }
             <Route component={NotFound}/>
           </Switch>
         </Index>
