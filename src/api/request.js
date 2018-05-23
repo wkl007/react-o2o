@@ -11,7 +11,7 @@ export function request (url, options) {
     'Accept': 'application/json, text/plain, */*',
   }
 
-  if (options.method === 'POST') {
+  if (options.method === 'POST' || options.method === 'PUT') {
     //根据后端接受什么形式的数据选择对应的body与headers
     options.body = JSON.stringify(options.body)
     options.headers = {
